@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.send('<h1>Hello, world!</h1>');
 });
 
 const server = http.createServer(app);
