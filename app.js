@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const expressHbs = require('express-handlebars');
 
 const rootDir = require('./utils');
 
@@ -7,7 +8,8 @@ const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 const app = express();
-app.set('view engine', 'pug');
+app.engine('hbs', expressHbs());
+app.set('view engine', 'hbs');
 app.set('views', 'views');
 
 app.use(express.urlencoded({ extended: true }));
