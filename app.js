@@ -4,7 +4,7 @@ const expressHbs = require('express-handlebars');
 
 const rootDir = require('./utils');
 
-const adminData = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 const app = express();
@@ -22,7 +22,7 @@ app.set('views', 'views');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(rootDir, 'public')));
 
-app.use('/admin', adminData.routes);
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use((req, res, next) =>
   // res.status(404).sendFile(path.join(rootDir, 'views', '404.html'))
