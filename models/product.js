@@ -23,12 +23,14 @@ module.exports = class Product {
     });
   }
 
-  static fetchAll() {
+  static fetchAll(cbFunc) {
     const filePath = path.join(rootDir, 'data', 'products.json');
     fs.readFile(filePath, (error, fileContent) => {
-      if (error) return [];
+      if (error) {
+        cbFunc([]);
+      }
 
-      return JSON.parse(fileContent);
+      cbFunc(JSON.parse(fileContent));
     });
   }
 };
