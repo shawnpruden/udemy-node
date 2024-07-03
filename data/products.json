@@ -1,1 +1,9 @@
-[{"title":"book","imageUrl":"https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg","description":"cookbook","price":"20"}]
+[
+  {
+    "id": "12312389",
+    "title": "book",
+    "imageUrl": "https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg",
+    "description": "cookbook",
+    "price": "20"
+  }
+]
