@@ -36,4 +36,12 @@ module.exports = class Product {
   static fetchAll(cbFunc) {
     getProductsFromFile(cbFunc);
   }
+
+  static findById(id, cbFunc) {
+    getProductsFromFile((products) => {
+      const product = products.find((product) => product.id === id);
+
+      cbFunc(product);
+    });
+  }
 };
