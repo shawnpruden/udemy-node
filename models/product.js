@@ -26,8 +26,6 @@ module.exports = class Product {
   save() {
     getProductsFromFile((products) => {
       if (this.id) {
-        const existingProduct = products.find((prod) => prod.id === this.id);
-        console.log(this.id, products);
         const existingProductIndex = products.findIndex(
           (prod) => prod.id === this.id
         );
@@ -35,7 +33,6 @@ module.exports = class Product {
         const updatedProducts = [...products];
         updatedProducts[existingProductIndex] = this;
 
-        // console.log({ updatedProducts });
         fs.writeFile(filePath, JSON.stringify(updatedProducts), (error) => {
           console.log(error);
         });
@@ -47,6 +44,20 @@ module.exports = class Product {
           console.log(error);
         });
       }
+    });
+  }
+
+  static deleteById(id) {
+    getProductsFromFile((products) => {
+      const updatedProducts = products.filter((product) => product.id !== id);
+
+      fs.writeFile(filePath, JSON.stringify(updatedProducts), (error) => {
+        if (!error) {
+          // delete the product in the cart
+        }
+      });
+
+      cbFunc(product);
     });
   }
 
