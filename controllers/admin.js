@@ -18,7 +18,7 @@ exports.postAddProduct = (req, res, next) => {
 
 exports.getEditProduct = (req, res, next) => {
   const editMode = req.query.edit;
-  // if (!editMode) return res.redirect('/');
+  if (!editMode) return res.redirect('/');
 
   const prodId = req.params.productId;
 
@@ -33,6 +33,10 @@ exports.getEditProduct = (req, res, next) => {
       product,
     });
   });
+};
+
+exports.postEdit.Product = (req, res, next) => {
+  console.log('first');
 };
 
 exports.getProducts = (req, res, next) => {
