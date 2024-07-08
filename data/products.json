@@ -1,16 +1,1 @@
-[
-  {
-    "id": "12312389",
-    "title": "book",
-    "imageUrl": "https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg",
-    "description": "cookbook",
-    "price": "20"
-  },
-  {
-    "title": "Red Book",
-    "imageUrl": "https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=",
-    "description": "A dictionary",
-    "price": "100",
-    "id": "0.1816128670286281"
-  }
-]
+[{"id":"12312389","title":"yellow book","imageUrl":"https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg","description":"cookbook","price":"20"},{"title":"Red Book","imageUrl":"https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=","description":"A dictionary","price":"100","id":"0.1816128670286281"},{"id":"0.7137747661541389","title":"Red cover Book","imageUrl":"https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=","description":"A dictionary","price":"100"},{"id":"0.5929003188976869","title":"Red cover Book","imageUrl":"https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=","description":"A dictionary","price":"99"},{"id":"0.8126290253163082","title":"Red Book","imageUrl":"https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=","description":"A dictionary","price":"10"},{"id":"0.22570187671405906","title":"book","imageUrl":"https://www.collinsdictionary.com/images/full/book_181404689_1000.jpg","description":"cookbook","price":"200"}]
