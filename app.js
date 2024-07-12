@@ -5,13 +5,12 @@ const errorController = require('./controllers/error');
 
 const rootDir = require('./utils');
 
-const adminRoutes = require('./routes/admin');
-const shopRoutes = require('./routes/shop');
-
 const app = express();
-
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(rootDir, 'public')));

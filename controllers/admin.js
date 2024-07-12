@@ -55,13 +55,16 @@ exports.postEditProduct = (req, res, next) => {
     description,
     price
   );
-  updatedProduct.save();
-  res.redirect('/admin/products');
+  updatedProduct
+    .save()
+    .then(() => {
+      res.redirect('/admin/products');
+    })
+    .catch((error) => console.error(error));
 };
 
 exports.postDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
-  console.log({ prodId });
   Product.deleteById(prodId);
   res.redirect('/admin/products');
 };
