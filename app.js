@@ -5,6 +5,9 @@ const errorController = require('./controllers/error');
 
 const rootDir = require('./utils');
 
+const sequelize = require('./database');
+const Product = require('./models/product');
+
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -19,4 +22,10 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(errorController.get404);
 
-app.listen(3000, () => console.log('Server is running!'));
+sequelize
+  .sync({ force: true })
+  .then((results) => {
+    console.log({ results });
+    app.listen(3000);
+  })
+  .catch((error) => console.error(error));
