@@ -7,6 +7,7 @@ const rootDir = require('./utils');
 
 const sequelize = require('./database');
 const Product = require('./models/product');
+const User = require('./models/user');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -22,8 +23,10 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(errorController.get404);
 
+Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
+User.hasMany(Product);
 sequelize
-  .sync()
+  .sync({ force: true })
   .then((results) => {
     app.listen(3000);
   })
