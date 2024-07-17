@@ -40,9 +40,9 @@ exports.getProducts = (req, res, next) => {
 exports.postAddProduct = (req, res, next) => {
   const { title, imageUrl, description, price } = req.body;
 
-  Product.create({ title, imageUrl, description, price })
-    .then((results) => console.log(results))
-    .catch((error) => console.error(error));
+  Product.create({ title, imageUrl, description, price }).catch((error) =>
+    console.error(error)
+  );
 };
 
 exports.postEditProduct = (req, res, next) => {
