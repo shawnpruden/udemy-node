@@ -35,12 +35,13 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
-// User.hasMany(Product);
+User.hasMany(Product);
 User.hasOne(Cart);
 Cart.belongsToMany(Product, { through: CartItem });
 Product.belongsToMany(Cart, { through: CartItem });
+
 sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => User.findByPk(1))
   .then((user) => {
     if (!user) {
@@ -49,7 +50,9 @@ sequelize
     return user;
   })
   .then((user) => {
-    console.log(user);
+    return user.createCart();
+  })
+  .then(() => {
     app.listen(3000);
   })
   .catch((error) => console.error(error));
