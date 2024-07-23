@@ -21,3 +21,8 @@
   font-size: 1.2rem;
   margin: 0;
 }
+
+.centered {
+  margin-top: 20px;
+  text-align: center;
+}
